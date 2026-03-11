@@ -1,24 +1,29 @@
 class week31 {
+
     public static void main(String[] args) {
 
-        int[] ages = new int[10];
+        int[] age = new int[10];
 
-        for (int i = 0; i < ages.length; i++) {
-            ages[i] = Integer.parseInt(args[i]);
+        // Take input for 10 students
+        for (int i = 0; i < age.length; i++) {
+
+            System.out.print("Enter age of student " + (i + 1) + ": ");
+
+            age[i] = Integer.parseInt(System.console().readLine());
         }
 
-        for (int i = 0; i < ages.length; i++) {
+        // Check voting eligibility
+        for (int i = 0; i < age.length; i++) {
 
-            if (ages[i] < 0) {
-                System.out.println("Invalid age: " + ages[i]);
-            }
-            else if (ages[i] >= 18) {
-                System.out.println("The student with the age " + ages[i] + " can vote.");
-            }
+            if (age[i] < 0) {
+                System.out.println("Invalid age");
+            } 
+            else if (age[i] >= 18) {
+                System.out.println("The student with the age " + age[i] + " can vote");
+            } 
             else {
-                System.out.println("The student with the age " + ages[i] + " cannot vote.");
+                System.out.println("The student with the age " + age[i] + " cannot vote");
             }
-
         }
     }
 }
